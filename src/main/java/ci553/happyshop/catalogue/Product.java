@@ -18,7 +18,7 @@ public class Product implements Comparable<Product> {
     private String proDescription;
     private String proImageName;
     private double unitPrice;
-    private int orderedQuantity =1; //The quantity of this product in the customer's order.
+    private int orderedQuantity = 1; //The quantity of this product in the customer's order.
     private int stockQuantity;//
 
     /**
@@ -51,7 +51,7 @@ public class Product implements Comparable<Product> {
     public String getProductDescription() { return proDescription;}
     public String getProductImageName() { return proImageName;}
     public double getUnitPrice() { return unitPrice;}
-    public int getOrderedQuantity() { return orderedQuantity;}
+    public int getOrderedQuantity() {return orderedQuantity;}
     public int getStockQuantity() { return stockQuantity;}
 
     //a setter method
@@ -80,7 +80,7 @@ public class Product implements Comparable<Product> {
 
 
     /** alternative constructors retained for possible future use.
-     *
+     *1
     public Product(String id, String des, double aPrice, int orderedQuantity) {
         proId = id;
         proDescription = des;

@@ -3,8 +3,7 @@ package ci553.happyshop.catalogue;
 import java.util.ArrayList;
 
 public class Trolley {
-
-    private ArrayList<Product> products = new ArrayList<>();
+    public ArrayList<Product> products = new ArrayList<>();
 
     /**
      * Adds a product to the trolley.
@@ -57,14 +56,26 @@ public class Trolley {
      *         return new OrganizedTrolley();
      *     }
      * }
-     */
-    public void addProduct(Product product) {
-        products.add(product); // product is appended to the end of the trolley
+     **/
+
+    public void addProduct(Product newProduct) { // currently non functional
+        String newProId = newProduct.getProductId();
+       for (int i = 0; i < products.size(); i++) {
+           Product searchingPro = products.get(i); // Product in current iteration
+           String searchingProId = searchingPro.getProductId();
+           if (newProId == searchingProId) { // If this is true, the current product ID is already in order
+               int oldQuant = searchingPro.getOrderedQuantity();
+               int addQuant = newProduct.getOrderedQuantity();
+               searchingPro.setOrderedQuantity(oldQuant + addQuant);// add additional amount
+               return;
+            } else {
+               products.add(newProduct);
+           }
+        }
     }
 
     public ArrayList<Product> getProducts() {
-        return products;
-    }
+        return products; }
 
     public void clear() {
         products.clear();
